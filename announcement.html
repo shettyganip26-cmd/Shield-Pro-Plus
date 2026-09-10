@@ -1,191 +1,2274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Shield Pro Plus — News & Updates</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no,
+             viewport-fit=cover"
+  >
+
+  <title>Happy Ganesh Chaturthi • Shield Pro</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap');
+
+    /* =========================================================
+       ROOT
+       ========================================================= */
+
     :root {
-      --bg-gradient: linear-gradient(135deg, #090e17 0%, #0d1527 50%, #08111e 100%);
-      --glass-bg: rgba(16, 26, 44, 0.75);
-      --glass-border: rgba(16, 185, 129, 0.25);
-      --emerald: #10b981;
-      --emerald-glow: rgba(16, 185, 129, 0.4);
-      --text-primary: #f8fafc;
-      --text-secondary: #94a3b8;
-      --badge-bg: rgba(16, 185, 129, 0.15);
+      --gold-light: #fff8d6;
+      --gold-soft: #fde68a;
+      --gold: #fbbf24;
+      --gold-main: #f59e0b;
+      --gold-dark: #b45309;
+      --orange: #d97706;
+
+      --text-main: #fff8ed;
+      --text-soft: #d8d0c8;
+      --text-muted: #a69a90;
+
+      --background: #070508;
+      --card-top: #281307;
+      --card-bottom: #0d0910;
     }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
       -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
     }
 
     body {
-      background: var(--bg-gradient);
-      color: var(--text-primary);
       min-height: 100vh;
+      min-height: 100dvh;
+
+      padding:
+        max(10px, env(safe-area-inset-top))
+        max(10px, env(safe-area-inset-right))
+        max(10px, env(safe-area-inset-bottom))
+        max(10px, env(safe-area-inset-left));
+
+      overflow-x: hidden;
+
       display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          ellipse at 50% -5%,
+          rgba(245, 158, 11, 0.16) 0%,
+          rgba(180, 83, 9, 0.07) 25%,
+          transparent 48%
+        ),
+        radial-gradient(
+          circle at 8% 65%,
+          rgba(245, 158, 11, 0.055),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 94% 35%,
+          rgba(234, 88, 12, 0.045),
+          transparent 28%
+        ),
+        linear-gradient(
+          145deg,
+          #160a04 0%,
+          #0b0710 53%,
+          #050407 100%
+        );
+
+      color: var(--text-main);
+
+      font-family:
+        'Plus Jakarta Sans',
+        sans-serif;
+    }
+
+    /* =========================================================
+       BACKGROUND AMBIENT GLOW
+       ========================================================= */
+
+    .ambient-glow {
+      position: fixed;
+
+      width: 330px;
+      height: 330px;
+
+      left: 50%;
+      top: 42%;
+
+      transform: translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(245, 158, 11, 0.055) 0%,
+          rgba(245, 158, 11, 0.018) 42%,
+          transparent 72%
+        );
+
+      pointer-events: none;
+
+      animation:
+        ambientPulse 5s ease-in-out infinite alternate;
+
+      z-index: 0;
+    }
+
+    @keyframes ambientPulse {
+      from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.6;
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1.12);
+        opacity: 1;
+      }
+    }
+
+    /* =========================================================
+       GOLD PARTICLES
+       ========================================================= */
+
+    .particles {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+
+      bottom: -10px;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+
+      background: #fbbf24;
+
+      box-shadow:
+        0 0 5px rgba(251, 191, 36, 0.9),
+        0 0 12px rgba(245, 158, 11, 0.35);
+
+      opacity: 0;
+
+      animation:
+        particleRise linear infinite,
+        particlePulse ease-in-out infinite alternate;
+    }
+
+    .particle:nth-child(1) {
+      left: 8%;
+      animation-duration: 11s, 2.4s;
+      animation-delay: -3s, 0s;
+    }
+
+    .particle:nth-child(2) {
+      left: 18%;
+      width: 3px;
+      height: 3px;
+      animation-duration: 14s, 3s;
+      animation-delay: -9s, -1s;
+    }
+
+    .particle:nth-child(3) {
+      left: 32%;
+      animation-duration: 12s, 2.8s;
+      animation-delay: -6s, -.5s;
+    }
+
+    .particle:nth-child(4) {
+      left: 49%;
+      width: 2px;
+      height: 2px;
+      animation-duration: 15s, 3.5s;
+      animation-delay: -11s, -2s;
+    }
+
+    .particle:nth-child(5) {
+      left: 66%;
+      animation-duration: 13s, 2.6s;
+      animation-delay: -5s, -.8s;
+    }
+
+    .particle:nth-child(6) {
+      left: 79%;
+      width: 3px;
+      height: 3px;
+      animation-duration: 16s, 3.2s;
+      animation-delay: -12s, -1.5s;
+    }
+
+    .particle:nth-child(7) {
+      left: 92%;
+      animation-duration: 10s, 2.5s;
+      animation-delay: -7s, -.3s;
+    }
+
+    @keyframes particleRise {
+      0% {
+        transform:
+          translate3d(0, 105vh, 0)
+          scale(0.5);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      50% {
+        transform:
+          translate3d(18px, 50vh, 0)
+          scale(1);
+      }
+
+      90% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform:
+          translate3d(-20px, -10vh, 0)
+          scale(0.7);
+
+        opacity: 0;
+      }
+    }
+
+    @keyframes particlePulse {
+      from {
+        filter: brightness(0.7);
+      }
+
+      to {
+        filter: brightness(1.5);
+      }
+    }
+
+    /* =========================================================
+       FLOATING PETALS
+       ========================================================= */
+
+    .petals {
+      position: fixed;
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+
+      z-index: 2;
+    }
+
+    .petal {
+      position: absolute;
+
+      top: -30px;
+
+      width: 7px;
+      height: 11px;
+
+      border-radius:
+        70% 30%
+        65% 35%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff0a8 0%,
+          #fbbf24 42%,
+          #d97706 100%
+        );
+
+      opacity: 0.42;
+
+      box-shadow:
+        0 0 7px rgba(245, 158, 11, 0.15);
+
+      animation:
+        petalFall linear infinite;
+    }
+
+    .petal:nth-child(1) {
+      left: 5%;
+      animation-duration: 14s;
+      animation-delay: -5s;
+      transform: scale(.55);
+    }
+
+    .petal:nth-child(2) {
+      left: 20%;
+      animation-duration: 18s;
+      animation-delay: -11s;
+      transform: scale(.4);
+    }
+
+    .petal:nth-child(3) {
+      left: 38%;
+      animation-duration: 15s;
+      animation-delay: -3s;
+      transform: scale(.55);
+    }
+
+    .petal:nth-child(4) {
+      left: 63%;
+      animation-duration: 19s;
+      animation-delay: -13s;
+      transform: scale(.45);
+    }
+
+    .petal:nth-child(5) {
+      left: 81%;
+      animation-duration: 16s;
+      animation-delay: -8s;
+      transform: scale(.6);
+    }
+
+    .petal:nth-child(6) {
+      left: 94%;
+      animation-duration: 20s;
+      animation-delay: -15s;
+      transform: scale(.4);
+    }
+
+    @keyframes petalFall {
+      0% {
+        top: -30px;
+        margin-left: 0;
+        opacity: 0;
+        transform: rotate(0deg);
+      }
+
+      10% {
+        opacity: 0.42;
+      }
+
+      45% {
+        margin-left: 25px;
+      }
+
+      75% {
+        margin-left: -18px;
+      }
+
+      90% {
+        opacity: 0.28;
+      }
+
+      100% {
+        top: 110vh;
+        margin-left: 20px;
+        opacity: 0;
+        transform: rotate(520deg);
+      }
+    }
+
+    /* =========================================================
+       MAIN CARD
+       ========================================================= */
+
+    .sacred-card {
+      position: relative;
+      z-index: 5;
+
+      width: 100%;
+      max-width: 430px;
+
+      /*
+        Mobile-first sizing.
+        Keeps the card comfortable on 360-430px screens.
+      */
+
+      padding:
+        25px
+        18px
+        18px;
+
+      border-radius: 28px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(42, 21, 8, 0.96) 0%,
+          rgba(22, 12, 17, 0.985) 48%,
+          rgba(10, 8, 13, 0.99) 100%
+        );
+
+      border:
+        1px solid rgba(245, 158, 11, 0.34);
+
+      box-shadow:
+        0 0 0 1px rgba(255, 248, 214, 0.025),
+        0 0 40px rgba(245, 158, 11, 0.10),
+        0 20px 60px rgba(0, 0, 0, 0.72);
+
+      overflow: hidden;
+    }
+
+    /* Inner frame */
+
+    .sacred-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 7px;
+
+      border-radius: 22px;
+
+      border:
+        1px solid rgba(251, 191, 36, 0.065);
+
+      pointer-events: none;
+    }
+
+    /* Top gold line */
+
+    .golden-arch {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          #92400e 12%,
+          #f59e0b 27%,
+          #fff0a8 50%,
+          #f59e0b 73%,
+          #92400e 88%,
+          transparent 100%
+        );
+
+      box-shadow:
+        0 0 10px rgba(251, 191, 36, 0.7),
+        0 0 22px rgba(245, 158, 11, 0.22);
+    }
+
+    /* Subtle moving shine */
+
+    .card-shine {
+      position: absolute;
+
+      top: -120px;
+      left: -75%;
+
+      width: 48%;
+      height: 360px;
+
+      transform: rotate(18deg);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.045),
+          transparent
+        );
+
+      animation:
+        cardShine 9s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes cardShine {
+      0%,
+      70% {
+        left: -75%;
+      }
+
+      88%,
+      100% {
+        left: 130%;
+      }
+    }
+
+    .relative-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* =========================================================
+       CORNER ORNAMENTS
+       ========================================================= */
+
+    .corner {
+      position: absolute;
+
+      width: 32px;
+      height: 32px;
+
+      opacity: 0.45;
+
+      pointer-events: none;
+    }
+
+    .corner::before,
+    .corner::after {
+      content: "";
+
+      position: absolute;
+
+      background:
+        linear-gradient(
+          90deg,
+          #f59e0b,
+          transparent
+        );
+    }
+
+    .corner::before {
+      top: 3px;
+      left: 0;
+
+      width: 28px;
+      height: 1px;
+    }
+
+    .corner::after {
+      top: 0;
+      left: 3px;
+
+      width: 1px;
+      height: 28px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f59e0b,
+          transparent
+        );
+    }
+
+    .corner.tl {
+      top: 17px;
+      left: 17px;
+    }
+
+    .corner.tr {
+      top: 17px;
+      right: 17px;
+      transform: rotate(90deg);
+    }
+
+    .corner.bl {
+      bottom: 17px;
+      left: 17px;
+      transform: rotate(-90deg);
+    }
+
+    .corner.br {
+      bottom: 17px;
+      right: 17px;
+      transform: rotate(180deg);
+    }
+
+    /* =========================================================
+       SACRED BADGE
+       ========================================================= */
+
+    .sacred-badge {
+      display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      padding: 16px;
-    }
 
-    .card {
-      width: 100%;
-      max-width: 440px;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--emerald-glow);
-    }
+      gap: 7px;
 
-    .badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
+      margin-bottom: 12px;
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
+      padding: 6px 12px;
+
       border-radius: 999px;
-      background: var(--badge-bg);
-      border: 1px solid var(--emerald-glow);
-      color: var(--emerald);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
 
-    .badge .dot {
-      width: 6px;
-      height: 6px;
-      background: var(--emerald);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--emerald);
-    }
+      background:
+        linear-gradient(
+          180deg,
+          rgba(245,158,11,.14),
+          rgba(245,158,11,.045)
+        );
 
-    .date {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
+      border:
+        1px solid rgba(245,158,11,.30);
 
-    .title {
-      font-size: 20px;
+      color: #fde68a;
+
+      font-size: 10px;
       font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      color: var(--text-primary);
+
+      letter-spacing: 1.5px;
+
+      white-space: nowrap;
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 0 15px rgba(245,158,11,.04);
     }
 
-    .description {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      margin-bottom: 18px;
+    .badge-lotus {
+      font-size: 11px;
     }
 
-    .features-list {
-      list-style: none;
+    /* =========================================================
+       GANESHA CENTER
+       ========================================================= */
+
+    .rangoli-frame {
+      position: relative;
+
+      width: 132px;
+      height: 132px;
+
+      margin:
+        0 auto
+        5px;
+
       display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divya-aura {
+      position: absolute;
+
+      width: 185px;
+      height: 185px;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 218, 100, .20) 0%,
+          rgba(245,158,11,.095) 30%,
+          rgba(180,83,9,.035) 53%,
+          transparent 72%
+        );
+
+      animation:
+        auraPulse 4s ease-in-out infinite alternate;
+
+      pointer-events: none;
+    }
+
+    @keyframes auraPulse {
+      from {
+        transform:
+          translate(-50%, -50%)
+          scale(.88);
+
+        opacity: .62;
+      }
+
+      to {
+        transform:
+          translate(-50%, -50%)
+          scale(1.08);
+
+        opacity: 1;
+      }
+    }
+
+    /* Rangoli */
+
+    .rangoli-svg {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      filter:
+        drop-shadow(
+          0 0 7px
+          rgba(245,158,11,.16)
+        );
+
+      animation:
+        rotateRangoli 34s linear infinite;
+    }
+
+    @keyframes rotateRangoli {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Ganesha halo */
+
+    .ganesha-halo {
+      position: absolute;
+
+      width: 82px;
+      height: 82px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255,251,235,.18),
+          rgba(245,158,11,.07) 48%,
+          transparent 72%
+        );
+
+      box-shadow:
+        0 0 18px rgba(245,158,11,.16),
+        inset 0 0 18px rgba(251,191,36,.06);
+
+      animation:
+        haloBreath 3.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes haloBreath {
+      from {
+        transform: scale(.94);
+      }
+
+      to {
+        transform: scale(1.05);
+      }
+    }
+
+    /* =========================================================
+       GANESHA SVG
+       ========================================================= */
+
+    .ganesha-icon {
+      position: relative;
+
+      z-index: 4;
+
+      width: 78px;
+      height: 78px;
+
+      filter:
+        drop-shadow(
+          0 0 7px
+          rgba(255,224,115,.7)
+        )
+        drop-shadow(
+          0 0 18px
+          rgba(245,158,11,.32)
+        );
+    }
+
+    /* =========================================================
+       SANSKRIT
+       ========================================================= */
+
+    .devanagari {
+      margin-top: 0;
+      margin-bottom: 3px;
+
+      font-family:
+        'Noto Serif Devanagari',
+        serif;
+
+      font-size: 16px;
+      font-weight: 600;
+
+      color: #fde68a;
+
+      letter-spacing: .5px;
+
+      text-shadow:
+        0 0 14px rgba(251,191,36,.2);
+    }
+
+    /* =========================================================
+       TITLE
+       ========================================================= */
+
+    h1.shloka-header {
+      max-width: 360px;
+
+      margin:
+        0 auto
+        5px;
+
+      font-family:
+        'Cinzel',
+        serif;
+
+      font-size:
+        clamp(21px, 6vw, 25px);
+
+      line-height: 1.16;
+
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fffdf1 0%,
+          #fde68a 35%,
+          #fbbf24 66%,
+          #d97706 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      letter-spacing: .35px;
+    }
+
+    .shloka-sub {
+      max-width: 335px;
+
+      margin:
+        0 auto
+        11px;
+
+      color: #d7b974;
+
+      font-size: 11.5px;
+
+      line-height: 1.48;
+
+      font-weight: 500;
+
+      font-style: italic;
+
+      letter-spacing: .05px;
+    }
+
+    /* =========================================================
+       DIYAS
+       ========================================================= */
+
+    .diyas-row {
+      display: flex;
+
+      justify-content: center;
+      align-items: flex-end;
+
+      gap: 24px;
+
+      margin-bottom: 12px;
+    }
+
+    .diya {
+      display: flex;
+
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 22px;
+
+      align-items: center;
     }
 
-    .feature-item {
+    .diya-flame {
+      position: relative;
+
+      width: 10px;
+      height: 17px;
+
+      margin-bottom: 1px;
+
+      border-radius:
+        60% 40%
+        55% 45%;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 75%,
+          #ffffff 0%,
+          #fff7a8 22%,
+          #fbbf24 52%,
+          #ea580c 78%,
+          transparent 100%
+        );
+
+      box-shadow:
+        0 0 8px #fbbf24,
+        0 0 16px rgba(234,88,12,.65);
+
+      transform-origin:
+        50% 90%;
+
+      animation:
+        flicker 1.7s ease-in-out infinite alternate;
+    }
+
+    .diya-flame::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: 3px;
+
+      width: 3px;
+      height: 7px;
+
+      transform:
+        translateX(-50%);
+
+      border-radius: 50%;
+
+      background: white;
+
+      opacity: .8;
+    }
+
+    .diya:nth-child(2) .diya-flame {
+      animation-delay: -.55s;
+      transform: scale(1.08);
+    }
+
+    .diya:nth-child(3) .diya-flame {
+      animation-delay: -.25s;
+    }
+
+    @keyframes flicker {
+      0% {
+        transform:
+          scale(1)
+          rotate(-3deg);
+      }
+
+      50% {
+        transform:
+          scale(1.12)
+          rotate(2deg);
+      }
+
+      100% {
+        transform:
+          scale(.95)
+          rotate(-1deg);
+      }
+    }
+
+    .diya-base {
+      width: 27px;
+      height: 9px;
+
+      border-radius:
+        50% 50%
+        45% 45%;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f59e0b,
+          #b45309 75%,
+          #78350f
+        );
+
+      border:
+        1px solid
+        rgba(253,230,138,.35);
+
+      box-shadow:
+        0 2px 5px rgba(0,0,0,.4),
+        0 0 7px rgba(245,158,11,.1);
+    }
+
+    /* =========================================================
+       DIVIDER
+       ========================================================= */
+
+    .gold-divider {
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 13px;
-      color: #e2e8f0;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      width: 80%;
+
+      margin:
+        0 auto
+        11px;
     }
 
-    .feature-icon {
-      color: var(--emerald);
-      font-size: 14px;
-      line-height: 1;
-      margin-top: 2px;
-    }
+    .gold-divider span {
+      height: 1px;
 
-    .actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-primary {
       flex: 1;
-      background: #059669;
-      color: #ffffff;
-      border: 1px solid var(--emerald);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 13.5px;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
-      transition: background 0.2s, transform 0.1s;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(245,158,11,.40),
+          transparent
+        );
     }
 
-    .btn-primary:active {
-      transform: scale(0.98);
-      background: #047857;
+    .gold-divider i {
+      width: 5px;
+      height: 5px;
+
+      transform: rotate(45deg);
+
+      background: #fbbf24;
+
+      box-shadow:
+        0 0 7px rgba(251,191,36,.55);
+    }
+
+    /* =========================================================
+       BLESSING PANEL
+       ========================================================= */
+
+    .blessing-box {
+      width: 100%;
+
+      margin-bottom: 13px;
+
+      padding:
+        3px 12px;
+
+      text-align: left;
+
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.014)
+        );
+
+      border:
+        1px solid
+        rgba(245,158,11,.19);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.035),
+        0 8px 22px rgba(0,0,0,.14);
+    }
+
+    .blessing-item {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 9px;
+
+      padding:
+        8px 1px;
+
+      color: var(--text-soft);
+
+      font-size: 10.9px;
+
+      line-height: 1.43;
+    }
+
+    .blessing-item + .blessing-item {
+      border-top:
+        1px solid
+        rgba(245,158,11,.095);
+    }
+
+    .blessing-item b {
+      color: #f8dc8a;
+
+      font-weight: 700;
+    }
+
+    /* Icon */
+
+    .blessing-icon {
+      flex:
+        0 0 25px;
+
+      width: 25px;
+      height: 25px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 1px;
+
+      border-radius: 8px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(245,158,11,.15),
+          rgba(245,158,11,.035)
+        );
+
+      border:
+        1px solid
+        rgba(245,158,11,.20);
+
+      color: #fbbf24;
+
+      font-size: 12px;
+
+      box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.04);
+    }
+
+    /* =========================================================
+       OATH
+       ========================================================= */
+
+    .oath-text {
+      max-width: 345px;
+
+      margin:
+        0 auto
+        11px;
+
+      padding:
+        0 5px;
+
+      color: #9d9289;
+
+      font-size: 10.2px;
+
+      line-height: 1.48;
+
+      letter-spacing: .02px;
+    }
+
+    .oath-text b {
+      color: #f5d77d;
+
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       BRAND
+       ========================================================= */
+
+    .brand-mark {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 6px;
+
+      margin-bottom: 7px;
+
+      color: #847970;
+
+      font-size: 8.5px;
+
+      font-weight: 800;
+
+      letter-spacing: 2.1px;
+    }
+
+    .brand-mark span {
+      color: #fbbf24;
+
+      font-size: 7px;
+    }
+
+    /* =========================================================
+       CTA BUTTON
+       ========================================================= */
+
+    .btn-action {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 49px;
+
+      overflow: hidden;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      border:
+        1px solid
+        rgba(255,245,180,.58);
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fbbf24 0%,
+          #f59e0b 38%,
+          #d97706 72%,
+          #b45309 100%
+        );
+
+      color: #190800;
+
+      font-family:
+        'Plus Jakarta Sans',
+        sans-serif;
+
+      font-size: 12.7px;
+
+      font-weight: 800;
+
+      letter-spacing: .05px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 6px 20px
+        rgba(217,119,6,.32),
+
+        0 2px 4px
+        rgba(0,0,0,.35),
+
+        inset 0 1px 1px
+        rgba(255,255,255,.58),
+
+        inset 0 -1px 1px
+        rgba(120,53,15,.3);
+
+      transition:
+        transform .15s ease,
+        filter .15s ease,
+        box-shadow .15s ease;
+
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    /* Button moving light */
+
+    .btn-action::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: -80%;
+
+      width: 43%;
+      height: 100%;
+
+      transform: skewX(-20deg);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.34),
+          transparent
+        );
+
+      animation:
+        buttonSheen 5.5s ease-in-out infinite;
+    }
+
+    @keyframes buttonSheen {
+      0%,
+      65% {
+        left: -80%;
+      }
+
+      85%,
+      100% {
+        left: 135%;
+      }
+    }
+
+    .btn-action span {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .btn-icon {
+      font-size: 14px;
+    }
+
+    .btn-action:active {
+      transform: scale(.975);
+
+      filter: brightness(1.08);
+
+      box-shadow:
+        0 3px 12px
+        rgba(217,119,6,.28),
+
+        inset 0 2px 4px
+        rgba(0,0,0,.15);
+    }
+
+    /* =========================================================
+       VERY SMALL PHONES
+       ========================================================= */
+
+    @media (max-width: 360px) {
+
+      body {
+        padding:
+          max(7px, env(safe-area-inset-top))
+          max(7px, env(safe-area-inset-right))
+          max(7px, env(safe-area-inset-bottom))
+          max(7px, env(safe-area-inset-left));
+      }
+
+      .sacred-card {
+        padding:
+          21px
+          14px
+          14px;
+
+        border-radius: 25px;
+      }
+
+      .sacred-badge {
+        font-size: 9px;
+        letter-spacing: 1.25px;
+
+        padding:
+          5px 10px;
+      }
+
+      .rangoli-frame {
+        width: 122px;
+        height: 122px;
+      }
+
+      .ganesha-icon {
+        width: 72px;
+        height: 72px;
+      }
+
+      .ganesha-halo {
+        width: 76px;
+        height: 76px;
+      }
+
+      .devanagari {
+        font-size: 15px;
+      }
+
+      h1.shloka-header {
+        font-size: 20px;
+      }
+
+      .shloka-sub {
+        font-size: 10.8px;
+      }
+
+      .diyas-row {
+        gap: 21px;
+      }
+
+      .blessing-box {
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+
+      .blessing-item {
+        font-size: 10.3px;
+      }
+
+      .oath-text {
+        font-size: 9.8px;
+      }
+
+      .btn-action {
+        min-height: 47px;
+        font-size: 11.8px;
+      }
+    }
+
+    /* =========================================================
+       SHORT PHONE SCREENS
+       ========================================================= */
+
+    @media (max-height: 700px) {
+
+      .sacred-card {
+        padding-top: 18px;
+        padding-bottom: 13px;
+      }
+
+      .sacred-badge {
+        margin-bottom: 7px;
+      }
+
+      .rangoli-frame {
+        width: 108px;
+        height: 108px;
+
+        margin-bottom: 1px;
+      }
+
+      .ganesha-icon {
+        width: 66px;
+        height: 66px;
+      }
+
+      .ganesha-halo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .devanagari {
+        font-size: 14px;
+      }
+
+      h1.shloka-header {
+        font-size: 19px;
+      }
+
+      .shloka-sub {
+        margin-bottom: 7px;
+      }
+
+      .diyas-row {
+        margin-bottom: 7px;
+      }
+
+      .gold-divider {
+        margin-bottom: 7px;
+      }
+
+      .blessing-item {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .blessing-box {
+        margin-bottom: 9px;
+      }
+
+      .oath-text {
+        margin-bottom: 7px;
+      }
+
+      .brand-mark {
+        margin-bottom: 5px;
+      }
+
+      .btn-action {
+        min-height: 45px;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
+
+
 <body>
 
-  <div class="card">
-    <div class="badge-row">
-      <div class="badge">
-        <span class="dot"></span>
-        Official Announcement
-      </div>
-      <span class="date">Updated Today</span>
-    </div>
+  <!-- =======================================================
+       AMBIENT BACKGROUND
+       ======================================================= -->
 
-    <h1 class="title">Shield Pro Plus Updates</h1>
-    <p class="description">
-      Welcome to the official announcements channel for Shield Pro Plus. Here you'll find news regarding app enhancements, study vault improvements, and focus features.
-    </p>
+  <div
+    class="ambient-glow"
+    aria-hidden="true"
+  ></div>
 
-    <ul class="features-list">
-      <li class="feature-item">
-        <span class="feature-icon">🛡️</span>
-        <div><strong>Distraction-Free Focus:</strong> Zero ads, scoped YouTube study environment, and strict study timers.</div>
-      </li>
-      <li class="feature-item">
-        <span class="feature-icon">📁</span>
-        <div><strong>Subject Vaults:</strong> Complete offline note taking, audio voice notes, and instant subject categorization.</div>
-      </li>
-      <li class="feature-item">
-        <span class="feature-icon">⚡</span>
-        <div><strong>High Performance:</strong> Fluid ExoPlayer rendering with local state isolation.</div>
-      </li>
-    </ul>
 
-    <div class="actions">
-      <button class="btn-primary" onclick="if (window.ShieldBridge) { window.ShieldBridge.dismiss(); }">
-        Got it, Continue
-      </button>
-    </div>
+  <!-- =======================================================
+       FLOATING PARTICLES
+       ======================================================= -->
+
+  <div
+    class="particles"
+    aria-hidden="true"
+  >
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
   </div>
+
+
+  <!-- =======================================================
+       FLOATING PETALS
+       ======================================================= -->
+
+  <div
+    class="petals"
+    aria-hidden="true"
+  >
+
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+
+  </div>
+
+
+  <!-- =======================================================
+       MAIN MOBILE CARD
+       ======================================================= -->
+
+  <main class="sacred-card">
+
+    <!-- Gold top rail -->
+    <div class="golden-arch"></div>
+
+    <!-- Moving glass shine -->
+    <div class="card-shine"></div>
+
+
+    <!-- Corner ornaments -->
+
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+
+    <div class="relative-content">
+
+
+      <!-- ===================================================
+           SACRED MANTRA
+           =================================================== -->
+
+      <div class="sacred-badge">
+
+        <span class="badge-lotus">🪷</span>
+
+        <span>
+          VAKRATUNDA MAHAKAYA
+        </span>
+
+        <span class="badge-lotus">🪷</span>
+
+      </div>
+
+
+      <!-- ===================================================
+           GANESHA CENTERPIECE
+           =================================================== -->
+
+      <div class="rangoli-frame">
+
+        <!-- Divine glow -->
+        <div class="divya-aura"></div>
+
+
+        <!-- Rotating sacred geometry -->
+
+        <svg
+          class="rangoli-svg"
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-hidden="true"
+        >
+
+          <!-- Outer dotted circle -->
+
+          <circle
+            cx="50"
+            cy="50"
+            r="46"
+            stroke="rgba(245,158,11,.25)"
+            stroke-width=".8"
+            stroke-dasharray="2 3"
+          />
+
+
+          <!-- Main circle -->
+
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="rgba(251,191,36,.31)"
+            stroke-width=".9"
+          />
+
+
+          <!-- Inner circle -->
+
+          <circle
+            cx="50"
+            cy="50"
+            r="32"
+            stroke="rgba(245,158,11,.18)"
+            stroke-width=".7"
+            stroke-dasharray="1 3"
+          />
+
+
+          <!-- Sacred star geometry -->
+
+          <path
+            d="
+              M50 5
+              L57 22
+              L76 26
+              L61 37
+              L67 50
+              L61 63
+              L76 74
+              L57 78
+              L50 95
+              L43 78
+              L24 74
+              L39 63
+              L33 50
+              L39 37
+              L24 26
+              L43 22
+              Z
+            "
+            fill="rgba(245,158,11,.04)"
+            stroke="rgba(245,158,11,.38)"
+            stroke-width=".8"
+          />
+
+
+          <!-- Lotus petals -->
+
+          <path
+            d="
+              M50 15
+              C55 23 61 26 68 27
+              C62 32 59 37 60 43
+              C55 39 52 35 50 30
+              C48 35 45 39 40 43
+              C41 37 38 32 32 27
+              C39 26 45 23 50 15
+              Z
+            "
+            fill="rgba(251,191,36,.05)"
+            stroke="rgba(251,191,36,.30)"
+            stroke-width=".7"
+          />
+
+
+          <!-- Sacred points -->
+
+          <circle
+            cx="50"
+            cy="7"
+            r="1"
+            fill="#fbbf24"
+          />
+
+          <circle
+            cx="93"
+            cy="50"
+            r="1"
+            fill="#fbbf24"
+          />
+
+          <circle
+            cx="50"
+            cy="93"
+            r="1"
+            fill="#fbbf24"
+          />
+
+          <circle
+            cx="7"
+            cy="50"
+            r="1"
+            fill="#fbbf24"
+          />
+
+        </svg>
+
+
+        <!-- Halo -->
+
+        <div class="ganesha-halo"></div>
+
+
+        <!-- =================================================
+             Ganesha
+             ================================================= -->
+
+        <svg
+          class="ganesha-icon"
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-label="Lord Ganesha"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="ganeshaGold"
+              x1="20"
+              y1="10"
+              x2="80"
+              y2="90"
+              gradientUnits="userSpaceOnUse"
+            >
+
+              <stop
+                offset="0"
+                stop-color="#fffdf1"
+              />
+
+              <stop
+                offset=".28"
+                stop-color="#fff0a8"
+              />
+
+              <stop
+                offset=".58"
+                stop-color="#fbbf24"
+              />
+
+              <stop
+                offset="1"
+                stop-color="#d97706"
+              />
+
+            </linearGradient>
+
+          </defs>
+
+
+          <!-- ---------------------------------------------
+               EARS
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M39 32
+              C28 24 17 27 18 39
+              C19 49 28 55 39 50
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="
+              M61 32
+              C72 24 83 27 82 39
+              C81 49 72 55 61 50
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               HEAD
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M37 34
+              C38 21 44 14 50 14
+              C56 14 62 21 63 34
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               CROWN
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M42 21
+              L45 11
+              L50 17
+              L55 11
+              L58 21
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <circle
+            cx="50"
+            cy="18"
+            r="1.8"
+            fill="#fff8d6"
+          />
+
+
+          <!-- ---------------------------------------------
+               EYES
+               --------------------------------------------- -->
+
+          <ellipse
+            cx="42"
+            cy="35"
+            rx="2.1"
+            ry="2.5"
+            fill="#fff3b0"
+          />
+
+          <ellipse
+            cx="58"
+            cy="35"
+            rx="2.1"
+            ry="2.5"
+            fill="#fff3b0"
+          />
+
+
+          <!-- ---------------------------------------------
+               EYEBROW / FOREHEAD
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M46 28
+              C48 26 52 26 54 28
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               TRUNK
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M50 29
+              C46 38 45 47 50 53
+              C56 60 61 62 58 69
+              C56 74 51 74 48 70
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               TUSKS
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M44 46
+              C40 51 40 55 43 58
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="2.7"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="
+              M56 46
+              C60 51 60 55 57 58
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="2.7"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               BODY
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M38 53
+              C33 62 34 76 41 84
+              C45 88 55 88 59 84
+              C66 76 67 62 62 53
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               LEFT ARM
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M38 59
+              C31 60 27 65 25 72
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               RIGHT ARM
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M62 59
+              C69 60 73 65 75 72
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+
+
+          <!-- ---------------------------------------------
+               LOWER SYMBOLIC BASE
+               --------------------------------------------- -->
+
+          <path
+            d="
+              M42 84
+              C45 88 55 88 58 84
+            "
+            stroke="url(#ganeshaGold)"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <!-- ===================================================
+           SANSKRIT
+           =================================================== -->
+
+      <div class="devanagari">
+        श्री गणेशाय नमः
+      </div>
+
+
+      <!-- ===================================================
+           TITLE
+           =================================================== -->
+
+      <h1 class="shloka-header">
+        Happy Ganesh Chaturthi
+      </h1>
+
+
+      <div class="shloka-sub">
+        “May Lord Vighnaharta remove every obstacle
+        from your preparation.”
+      </div>
+
+
+      <!-- ===================================================
+           THREE DIYAS
+           =================================================== -->
+
+      <div class="diyas-row">
+
+        <div class="diya">
+          <div class="diya-flame"></div>
+          <div class="diya-base"></div>
+        </div>
+
+        <div class="diya">
+          <div class="diya-flame"></div>
+          <div class="diya-base"></div>
+        </div>
+
+        <div class="diya">
+          <div class="diya-flame"></div>
+          <div class="diya-base"></div>
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           GOLD DIVIDER
+           =================================================== -->
+
+      <div class="gold-divider">
+
+        <span></span>
+
+        <i></i>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- ===================================================
+           BLESSINGS
+           =================================================== -->
+
+      <section class="blessing-box">
+
+
+        <!-- Intellect -->
+
+        <div class="blessing-item">
+
+          <div class="blessing-icon">
+            ✦
+          </div>
+
+          <div>
+
+            <b>
+              Supreme Intellect
+            </b>
+
+            <br>
+
+            Master complex subjects with clarity,
+            understanding and wisdom.
+
+          </div>
+
+        </div>
+
+
+        <!-- Focus -->
+
+        <div class="blessing-item">
+
+          <div class="blessing-icon">
+            ◇
+          </div>
+
+          <div>
+
+            <b>
+              Shield of Siddhi
+            </b>
+
+            <br>
+
+            Protect your focus from digital distractions,
+            fatigue and burnout.
+
+          </div>
+
+        </div>
+
+
+        <!-- Victory -->
+
+        <div class="blessing-item">
+
+          <div class="blessing-icon">
+            ✧
+          </div>
+
+          <div>
+
+            <b>
+              Unstoppable Victory
+            </b>
+
+            <br>
+
+            Stay disciplined and move steadily toward
+            your target examination goals.
+
+          </div>
+
+        </div>
+
+
+      </section>
+
+
+      <!-- ===================================================
+           DEDICATION
+           =================================================== -->
+
+      <p class="oath-text">
+
+        Let this auspicious occasion mark a fresh resolve
+        in your daily revision discipline with
+        <b>Shield Pro</b>.
+
+      </p>
+
+
+      <!-- ===================================================
+           BRAND
+           =================================================== -->
+
+      <div class="brand-mark">
+
+        <span>◆</span>
+
+        SHIELD PRO
+
+        <span>◆</span>
+
+      </div>
+
+
+      <!-- ===================================================
+           ACTION BUTTON
+           =================================================== -->
+
+      <button
+        class="btn-action"
+        id="blessingButton"
+        type="button"
+        onclick="AndroidShield.dismiss()"
+      >
+
+        <span class="btn-icon">
+          🪷
+        </span>
+
+        <span>
+          Receive Blessings &amp; Begin Study
+        </span>
+
+      </button>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    /*
+      Shield Pro Native Android Bridge
+
+      The existing Android bridge is intentionally preserved:
+
+          AndroidShield.dismiss()
+
+      Do not replace it if your native app already exposes
+      this JavaScript interface.
+    */
+
+
+    const blessingButton =
+      document.getElementById("blessingButton");
+
+
+    /*
+      Optional tactile feedback.
+
+      Android devices that support navigator.vibrate()
+      will receive a very small vibration when the user
+      presses the button.
+    */
+
+    blessingButton.addEventListener(
+      "click",
+      function () {
+
+        try {
+
+          if (
+            navigator.vibrate &&
+            typeof navigator.vibrate === "function"
+          ) {
+            navigator.vibrate(18);
+          }
+
+        } catch (e) {
+          /* Ignore vibration errors. */
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
