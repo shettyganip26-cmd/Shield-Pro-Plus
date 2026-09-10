@@ -15,7 +15,9 @@
   <title>Happy Ganesh Chaturthi • Shield Pro</title>
 
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap');
+
 
     /* =========================================================
        ROOT
@@ -38,6 +40,7 @@
       --card-bottom: #0d0910;
     }
 
+
     /* =========================================================
        RESET
        ========================================================= */
@@ -51,12 +54,14 @@
       -webkit-touch-callout: none;
     }
 
+
     html,
     body {
       width: 100%;
       min-width: 100%;
       min-height: 100%;
     }
+
 
     body {
       min-height: 100vh;
@@ -105,8 +110,9 @@
         sans-serif;
     }
 
+
     /* =========================================================
-       BACKGROUND AMBIENT GLOW
+       AMBIENT BACKGROUND
        ========================================================= */
 
     .ambient-glow {
@@ -138,17 +144,27 @@
       z-index: 0;
     }
 
+
     @keyframes ambientPulse {
+
       from {
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0.6;
+        transform:
+          translate(-50%, -50%)
+          scale(.9);
+
+        opacity: .6;
       }
 
       to {
-        transform: translate(-50%, -50%) scale(1.12);
+        transform:
+          translate(-50%, -50%)
+          scale(1.12);
+
         opacity: 1;
       }
+
     }
+
 
     /* =========================================================
        GOLD PARTICLES
@@ -165,6 +181,7 @@
       z-index: 1;
     }
 
+
     .particle {
       position: absolute;
 
@@ -178,8 +195,8 @@
       background: #fbbf24;
 
       box-shadow:
-        0 0 5px rgba(251, 191, 36, 0.9),
-        0 0 12px rgba(245, 158, 11, 0.35);
+        0 0 5px rgba(251, 191, 36, .9),
+        0 0 12px rgba(245, 158, 11, .35);
 
       opacity: 0;
 
@@ -188,11 +205,13 @@
         particlePulse ease-in-out infinite alternate;
     }
 
+
     .particle:nth-child(1) {
       left: 8%;
       animation-duration: 11s, 2.4s;
       animation-delay: -3s, 0s;
     }
+
 
     .particle:nth-child(2) {
       left: 18%;
@@ -202,25 +221,27 @@
       animation-delay: -9s, -1s;
     }
 
+
     .particle:nth-child(3) {
       left: 32%;
       animation-duration: 12s, 2.8s;
       animation-delay: -6s, -.5s;
     }
 
+
     .particle:nth-child(4) {
       left: 49%;
-      width: 2px;
-      height: 2px;
       animation-duration: 15s, 3.5s;
       animation-delay: -11s, -2s;
     }
+
 
     .particle:nth-child(5) {
       left: 66%;
       animation-duration: 13s, 2.6s;
       animation-delay: -5s, -.8s;
     }
+
 
     .particle:nth-child(6) {
       left: 79%;
@@ -230,23 +251,26 @@
       animation-delay: -12s, -1.5s;
     }
 
+
     .particle:nth-child(7) {
       left: 92%;
       animation-duration: 10s, 2.5s;
       animation-delay: -7s, -.3s;
     }
 
+
     @keyframes particleRise {
+
       0% {
         transform:
           translate3d(0, 105vh, 0)
-          scale(0.5);
+          scale(.5);
 
         opacity: 0;
       }
 
       10% {
-        opacity: 0.6;
+        opacity: .6;
       }
 
       50% {
@@ -256,27 +280,32 @@
       }
 
       90% {
-        opacity: 0.35;
+        opacity: .35;
       }
 
       100% {
         transform:
           translate3d(-20px, -10vh, 0)
-          scale(0.7);
+          scale(.7);
 
         opacity: 0;
       }
+
     }
 
+
     @keyframes particlePulse {
+
       from {
-        filter: brightness(0.7);
+        filter: brightness(.7);
       }
 
       to {
         filter: brightness(1.5);
       }
+
     }
+
 
     /* =========================================================
        FLOATING PETALS
@@ -292,6 +321,7 @@
 
       z-index: 2;
     }
+
 
     .petal {
       position: absolute;
@@ -313,14 +343,15 @@
           #d97706 100%
         );
 
-      opacity: 0.42;
+      opacity: .42;
 
       box-shadow:
-        0 0 7px rgba(245, 158, 11, 0.15);
+        0 0 7px rgba(245, 158, 11, .15);
 
       animation:
         petalFall linear infinite;
     }
+
 
     .petal:nth-child(1) {
       left: 5%;
@@ -329,12 +360,14 @@
       transform: scale(.55);
     }
 
+
     .petal:nth-child(2) {
       left: 20%;
       animation-duration: 18s;
       animation-delay: -11s;
       transform: scale(.4);
     }
+
 
     .petal:nth-child(3) {
       left: 38%;
@@ -343,12 +376,14 @@
       transform: scale(.55);
     }
 
+
     .petal:nth-child(4) {
       left: 63%;
       animation-duration: 19s;
       animation-delay: -13s;
       transform: scale(.45);
     }
+
 
     .petal:nth-child(5) {
       left: 81%;
@@ -357,6 +392,7 @@
       transform: scale(.6);
     }
 
+
     .petal:nth-child(6) {
       left: 94%;
       animation-duration: 20s;
@@ -364,7 +400,9 @@
       transform: scale(.4);
     }
 
+
     @keyframes petalFall {
+
       0% {
         top: -30px;
         margin-left: 0;
@@ -373,7 +411,7 @@
       }
 
       10% {
-        opacity: 0.42;
+        opacity: .42;
       }
 
       45% {
@@ -385,7 +423,7 @@
       }
 
       90% {
-        opacity: 0.28;
+        opacity: .28;
       }
 
       100% {
@@ -394,7 +432,9 @@
         opacity: 0;
         transform: rotate(520deg);
       }
+
     }
+
 
     /* =========================================================
        MAIN CARD
@@ -407,15 +447,10 @@
       width: 100%;
       max-width: 430px;
 
-      /*
-        Mobile-first sizing.
-        Keeps the card comfortable on 360-430px screens.
-      */
-
       padding:
         25px
         18px
-        18px;
+        17px;
 
       border-radius: 28px;
 
@@ -424,23 +459,24 @@
       background:
         linear-gradient(
           180deg,
-          rgba(42, 21, 8, 0.96) 0%,
-          rgba(22, 12, 17, 0.985) 48%,
-          rgba(10, 8, 13, 0.99) 100%
+          rgba(42, 21, 8, .96) 0%,
+          rgba(22, 12, 17, .985) 48%,
+          rgba(10, 8, 13, .99) 100%
         );
 
       border:
-        1px solid rgba(245, 158, 11, 0.34);
+        1px solid rgba(245, 158, 11, .34);
 
       box-shadow:
-        0 0 0 1px rgba(255, 248, 214, 0.025),
-        0 0 40px rgba(245, 158, 11, 0.10),
-        0 20px 60px rgba(0, 0, 0, 0.72);
+        0 0 0 1px rgba(255, 248, 214, .025),
+        0 0 40px rgba(245, 158, 11, .10),
+        0 20px 60px rgba(0, 0, 0, .72);
 
       overflow: hidden;
     }
 
-    /* Inner frame */
+
+    /* Inner border */
 
     .sacred-card::before {
       content: "";
@@ -452,12 +488,13 @@
       border-radius: 22px;
 
       border:
-        1px solid rgba(251, 191, 36, 0.065);
+        1px solid rgba(251, 191, 36, .065);
 
       pointer-events: none;
     }
 
-    /* Top gold line */
+
+    /* Top gold rail */
 
     .golden-arch {
       position: absolute;
@@ -481,11 +518,12 @@
         );
 
       box-shadow:
-        0 0 10px rgba(251, 191, 36, 0.7),
-        0 0 22px rgba(245, 158, 11, 0.22);
+        0 0 10px rgba(251, 191, 36, .7),
+        0 0 22px rgba(245, 158, 11, .22);
     }
 
-    /* Subtle moving shine */
+
+    /* Moving shine */
 
     .card-shine {
       position: absolute;
@@ -512,7 +550,9 @@
       pointer-events: none;
     }
 
+
     @keyframes cardShine {
+
       0%,
       70% {
         left: -75%;
@@ -522,12 +562,15 @@
       100% {
         left: 130%;
       }
+
     }
+
 
     .relative-content {
       position: relative;
       z-index: 3;
     }
+
 
     /* =========================================================
        CORNER ORNAMENTS
@@ -539,10 +582,11 @@
       width: 32px;
       height: 32px;
 
-      opacity: 0.45;
+      opacity: .45;
 
       pointer-events: none;
     }
+
 
     .corner::before,
     .corner::after {
@@ -558,6 +602,7 @@
         );
     }
 
+
     .corner::before {
       top: 3px;
       left: 0;
@@ -565,6 +610,7 @@
       width: 28px;
       height: 1px;
     }
+
 
     .corner::after {
       top: 0;
@@ -581,10 +627,12 @@
         );
     }
 
+
     .corner.tl {
       top: 17px;
       left: 17px;
     }
+
 
     .corner.tr {
       top: 17px;
@@ -592,17 +640,20 @@
       transform: rotate(90deg);
     }
 
+
     .corner.bl {
       bottom: 17px;
       left: 17px;
       transform: rotate(-90deg);
     }
 
+
     .corner.br {
       bottom: 17px;
       right: 17px;
       transform: rotate(180deg);
     }
+
 
     /* =========================================================
        SACRED BADGE
@@ -618,7 +669,9 @@
 
       margin-bottom: 12px;
 
-      padding: 6px 12px;
+      padding:
+        6px
+        12px;
 
       border-radius: 999px;
 
@@ -646,9 +699,11 @@
         0 0 15px rgba(245,158,11,.04);
     }
 
+
     .badge-lotus {
       font-size: 11px;
     }
+
 
     /* =========================================================
        GANESHA CENTER
@@ -669,6 +724,7 @@
       align-items: center;
       justify-content: center;
     }
+
 
     .divya-aura {
       position: absolute;
@@ -699,7 +755,9 @@
       pointer-events: none;
     }
 
+
     @keyframes auraPulse {
+
       from {
         transform:
           translate(-50%, -50%)
@@ -715,9 +773,11 @@
 
         opacity: 1;
       }
+
     }
 
-    /* Rangoli */
+
+    /* Rotating Rangoli */
 
     .rangoli-svg {
       position: absolute;
@@ -737,7 +797,9 @@
         rotateRangoli 34s linear infinite;
     }
 
+
     @keyframes rotateRangoli {
+
       from {
         transform: rotate(0deg);
       }
@@ -745,7 +807,9 @@
       to {
         transform: rotate(360deg);
       }
+
     }
+
 
     /* Ganesha halo */
 
@@ -773,7 +837,9 @@
         haloBreath 3.5s ease-in-out infinite alternate;
     }
 
+
     @keyframes haloBreath {
+
       from {
         transform: scale(.94);
       }
@@ -781,7 +847,9 @@
       to {
         transform: scale(1.05);
       }
+
     }
+
 
     /* =========================================================
        GANESHA SVG
@@ -806,12 +874,12 @@
         );
     }
 
+
     /* =========================================================
        SANSKRIT
        ========================================================= */
 
     .devanagari {
-      margin-top: 0;
       margin-bottom: 3px;
 
       font-family:
@@ -828,6 +896,7 @@
       text-shadow:
         0 0 14px rgba(251,191,36,.2);
     }
+
 
     /* =========================================================
        TITLE
@@ -868,6 +937,7 @@
       letter-spacing: .35px;
     }
 
+
     .shloka-sub {
       max-width: 335px;
 
@@ -888,6 +958,7 @@
       letter-spacing: .05px;
     }
 
+
     /* =========================================================
        DIYAS
        ========================================================= */
@@ -903,6 +974,7 @@
       margin-bottom: 12px;
     }
 
+
     .diya {
       display: flex;
 
@@ -910,6 +982,7 @@
 
       align-items: center;
     }
+
 
     .diya-flame {
       position: relative;
@@ -944,6 +1017,7 @@
         flicker 1.7s ease-in-out infinite alternate;
     }
 
+
     .diya-flame::after {
       content: "";
 
@@ -965,16 +1039,20 @@
       opacity: .8;
     }
 
+
     .diya:nth-child(2) .diya-flame {
       animation-delay: -.55s;
       transform: scale(1.08);
     }
 
+
     .diya:nth-child(3) .diya-flame {
       animation-delay: -.25s;
     }
 
+
     @keyframes flicker {
+
       0% {
         transform:
           scale(1)
@@ -992,7 +1070,9 @@
           scale(.95)
           rotate(-1deg);
       }
+
     }
+
 
     .diya-base {
       width: 27px;
@@ -1019,6 +1099,7 @@
         0 0 7px rgba(245,158,11,.1);
     }
 
+
     /* =========================================================
        DIVIDER
        ========================================================= */
@@ -1038,6 +1119,7 @@
         11px;
     }
 
+
     .gold-divider span {
       height: 1px;
 
@@ -1052,6 +1134,7 @@
         );
     }
 
+
     .gold-divider i {
       width: 5px;
       height: 5px;
@@ -1064,6 +1147,7 @@
         0 0 7px rgba(251,191,36,.55);
     }
 
+
     /* =========================================================
        BLESSING PANEL
        ========================================================= */
@@ -1074,7 +1158,8 @@
       margin-bottom: 13px;
 
       padding:
-        3px 12px;
+        3px
+        12px;
 
       text-align: left;
 
@@ -1096,6 +1181,7 @@
         0 8px 22px rgba(0,0,0,.14);
     }
 
+
     .blessing-item {
       display: flex;
 
@@ -1104,7 +1190,8 @@
       gap: 9px;
 
       padding:
-        8px 1px;
+        8px
+        1px;
 
       color: var(--text-soft);
 
@@ -1113,11 +1200,13 @@
       line-height: 1.43;
     }
 
+
     .blessing-item + .blessing-item {
       border-top:
         1px solid
         rgba(245,158,11,.095);
     }
+
 
     .blessing-item b {
       color: #f8dc8a;
@@ -1125,7 +1214,6 @@
       font-weight: 700;
     }
 
-    /* Icon */
 
     .blessing-icon {
       flex:
@@ -1163,8 +1251,9 @@
         rgba(255,255,255,.04);
     }
 
+
     /* =========================================================
-       OATH
+       DEDICATION
        ========================================================= */
 
     .oath-text {
@@ -1172,7 +1261,7 @@
 
       margin:
         0 auto
-        11px;
+        10px;
 
       padding:
         0 5px;
@@ -1186,11 +1275,13 @@
       letter-spacing: .02px;
     }
 
+
     .oath-text b {
       color: #f5d77d;
 
       font-weight: 700;
     }
+
 
     /* =========================================================
        BRAND
@@ -1215,11 +1306,13 @@
       letter-spacing: 2.1px;
     }
 
+
     .brand-mark span {
       color: #fbbf24;
 
       font-size: 7px;
     }
+
 
     /* =========================================================
        CTA BUTTON
@@ -1292,7 +1385,8 @@
       user-select: none;
     }
 
-    /* Button moving light */
+
+    /* Button sheen */
 
     .btn-action::before {
       content: "";
@@ -1319,7 +1413,9 @@
         buttonSheen 5.5s ease-in-out infinite;
     }
 
+
     @keyframes buttonSheen {
+
       0%,
       65% {
         left: -80%;
@@ -1329,7 +1425,9 @@
       100% {
         left: 135%;
       }
+
     }
+
 
     .btn-action span {
       position: relative;
@@ -1337,11 +1435,14 @@
       z-index: 2;
     }
 
+
     .btn-icon {
       font-size: 14px;
     }
 
+
     .btn-action:active {
+
       transform: scale(.975);
 
       filter: brightness(1.08);
@@ -1353,6 +1454,78 @@
         inset 0 2px 4px
         rgba(0,0,0,.15);
     }
+
+
+    /* =========================================================
+       PREMIUM CREATOR CREDIT
+       ========================================================= */
+
+    .creation-credit {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 6px;
+
+      margin-top: 10px;
+
+      padding:
+        0 2px
+        1px;
+
+      color:
+        rgba(216,208,200,.42);
+
+      font-size: 7.5px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.25px;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+    }
+
+
+    .creation-credit strong {
+      color:
+        rgba(253,230,138,.74);
+
+      font-weight: 800;
+
+      letter-spacing: 1.35px;
+    }
+
+
+    .credit-diamond {
+      color:
+        rgba(251,191,36,.62);
+
+      font-size: 7px;
+
+      line-height: 1;
+    }
+
+
+    .credit-line {
+      width: 21px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(245,158,11,.25)
+        );
+    }
+
+
+    .credit-line:last-child {
+      transform: rotate(180deg);
+    }
+
 
     /* =========================================================
        VERY SMALL PHONES
@@ -1368,6 +1541,7 @@
           max(7px, env(safe-area-inset-left));
       }
 
+
       .sacred-card {
         padding:
           21px
@@ -1377,63 +1551,95 @@
         border-radius: 25px;
       }
 
+
       .sacred-badge {
         font-size: 9px;
+
         letter-spacing: 1.25px;
 
         padding:
-          5px 10px;
+          5px
+          10px;
       }
+
 
       .rangoli-frame {
         width: 122px;
         height: 122px;
       }
 
+
       .ganesha-icon {
         width: 72px;
         height: 72px;
       }
+
 
       .ganesha-halo {
         width: 76px;
         height: 76px;
       }
 
+
       .devanagari {
         font-size: 15px;
       }
+
 
       h1.shloka-header {
         font-size: 20px;
       }
 
+
       .shloka-sub {
         font-size: 10.8px;
       }
 
+
       .diyas-row {
         gap: 21px;
       }
+
 
       .blessing-box {
         padding-left: 9px;
         padding-right: 9px;
       }
 
+
       .blessing-item {
         font-size: 10.3px;
       }
+
 
       .oath-text {
         font-size: 9.8px;
       }
 
+
       .btn-action {
         min-height: 47px;
         font-size: 11.8px;
       }
+
+
+      .creation-credit {
+        font-size: 6.7px;
+        letter-spacing: 1.05px;
+      }
+
+
+      .creation-credit strong {
+        letter-spacing: 1.1px;
+      }
+
+
+      .credit-line {
+        width: 14px;
+      }
+
     }
+
 
     /* =========================================================
        SHORT PHONE SCREENS
@@ -1446,9 +1652,11 @@
         padding-bottom: 13px;
       }
 
+
       .sacred-badge {
         margin-bottom: 7px;
       }
+
 
       .rangoli-frame {
         width: 108px;
@@ -1457,57 +1665,76 @@
         margin-bottom: 1px;
       }
 
+
       .ganesha-icon {
         width: 66px;
         height: 66px;
       }
+
 
       .ganesha-halo {
         width: 70px;
         height: 70px;
       }
 
+
       .devanagari {
         font-size: 14px;
       }
+
 
       h1.shloka-header {
         font-size: 19px;
       }
 
+
       .shloka-sub {
         margin-bottom: 7px;
       }
+
 
       .diyas-row {
         margin-bottom: 7px;
       }
 
+
       .gold-divider {
         margin-bottom: 7px;
       }
+
 
       .blessing-item {
         padding-top: 6px;
         padding-bottom: 6px;
       }
 
+
       .blessing-box {
         margin-bottom: 9px;
       }
+
 
       .oath-text {
         margin-bottom: 7px;
       }
 
+
       .brand-mark {
         margin-bottom: 5px;
       }
 
+
       .btn-action {
         min-height: 45px;
       }
+
+
+      .creation-credit {
+        margin-top: 7px;
+      }
+
     }
+
 
     /* =========================================================
        REDUCED MOTION
@@ -1518,19 +1745,22 @@
       *,
       *::before,
       *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
       }
+
     }
+
   </style>
 </head>
 
 
 <body>
 
+
   <!-- =======================================================
-       AMBIENT BACKGROUND
+       AMBIENT GLOW
        ======================================================= -->
 
   <div
@@ -1540,7 +1770,7 @@
 
 
   <!-- =======================================================
-       FLOATING PARTICLES
+       GOLD PARTICLES
        ======================================================= -->
 
   <div
@@ -1579,19 +1809,23 @@
 
 
   <!-- =======================================================
-       MAIN MOBILE CARD
+       MAIN CARD
        ======================================================= -->
 
   <main class="sacred-card">
 
+
     <!-- Gold top rail -->
+
     <div class="golden-arch"></div>
 
-    <!-- Moving glass shine -->
+
+    <!-- Moving shine -->
+
     <div class="card-shine"></div>
 
 
-    <!-- Corner ornaments -->
+    <!-- Luxury corner ornaments -->
 
     <div class="corner tl"></div>
     <div class="corner tr"></div>
@@ -1608,13 +1842,17 @@
 
       <div class="sacred-badge">
 
-        <span class="badge-lotus">🪷</span>
+        <span class="badge-lotus">
+          🪷
+        </span>
 
         <span>
           VAKRATUNDA MAHAKAYA
         </span>
 
-        <span class="badge-lotus">🪷</span>
+        <span class="badge-lotus">
+          🪷
+        </span>
 
       </div>
 
@@ -1625,11 +1863,13 @@
 
       <div class="rangoli-frame">
 
-        <!-- Divine glow -->
+
+        <!-- Divine aura -->
+
         <div class="divya-aura"></div>
 
 
-        <!-- Rotating sacred geometry -->
+        <!-- Rotating Rangoli -->
 
         <svg
           class="rangoli-svg"
@@ -1638,7 +1878,8 @@
           aria-hidden="true"
         >
 
-          <!-- Outer dotted circle -->
+
+          <!-- Outer circle -->
 
           <circle
             cx="50"
@@ -1661,7 +1902,7 @@
           />
 
 
-          <!-- Inner circle -->
+          <!-- Inner dotted circle -->
 
           <circle
             cx="50"
@@ -1673,7 +1914,7 @@
           />
 
 
-          <!-- Sacred star geometry -->
+          <!-- Sacred geometry -->
 
           <path
             d="
@@ -1701,7 +1942,7 @@
           />
 
 
-          <!-- Lotus petals -->
+          <!-- Lotus -->
 
           <path
             d="
@@ -1753,7 +1994,7 @@
         </svg>
 
 
-        <!-- Halo -->
+        <!-- Ganesha halo -->
 
         <div class="ganesha-halo"></div>
 
@@ -1768,6 +2009,7 @@
           fill="none"
           aria-label="Lord Ganesha"
         >
+
 
           <defs>
 
@@ -1805,9 +2047,7 @@
           </defs>
 
 
-          <!-- ---------------------------------------------
-               EARS
-               --------------------------------------------- -->
+          <!-- Ears -->
 
           <path
             d="
@@ -1819,6 +2059,7 @@
             stroke-width="4"
             stroke-linecap="round"
           />
+
 
           <path
             d="
@@ -1832,9 +2073,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               HEAD
-               --------------------------------------------- -->
+          <!-- Head -->
 
           <path
             d="
@@ -1848,9 +2087,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               CROWN
-               --------------------------------------------- -->
+          <!-- Crown -->
 
           <path
             d="
@@ -1866,6 +2103,7 @@
             stroke-linejoin="round"
           />
 
+
           <circle
             cx="50"
             cy="18"
@@ -1874,9 +2112,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               EYES
-               --------------------------------------------- -->
+          <!-- Eyes -->
 
           <ellipse
             cx="42"
@@ -1885,6 +2121,7 @@
             ry="2.5"
             fill="#fff3b0"
           />
+
 
           <ellipse
             cx="58"
@@ -1895,9 +2132,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               EYEBROW / FOREHEAD
-               --------------------------------------------- -->
+          <!-- Forehead -->
 
           <path
             d="
@@ -1910,9 +2145,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               TRUNK
-               --------------------------------------------- -->
+          <!-- Trunk -->
 
           <path
             d="
@@ -1927,9 +2160,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               TUSKS
-               --------------------------------------------- -->
+          <!-- Tusks -->
 
           <path
             d="
@@ -1940,6 +2171,7 @@
             stroke-width="2.7"
             stroke-linecap="round"
           />
+
 
           <path
             d="
@@ -1952,9 +2184,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               BODY
-               --------------------------------------------- -->
+          <!-- Body -->
 
           <path
             d="
@@ -1969,9 +2199,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               LEFT ARM
-               --------------------------------------------- -->
+          <!-- Left arm -->
 
           <path
             d="
@@ -1984,9 +2212,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               RIGHT ARM
-               --------------------------------------------- -->
+          <!-- Right arm -->
 
           <path
             d="
@@ -1999,9 +2225,7 @@
           />
 
 
-          <!-- ---------------------------------------------
-               LOWER SYMBOLIC BASE
-               --------------------------------------------- -->
+          <!-- Lower base -->
 
           <path
             d="
@@ -2043,25 +2267,38 @@
 
 
       <!-- ===================================================
-           THREE DIYAS
+           DIYAS
            =================================================== -->
 
       <div class="diyas-row">
 
-        <div class="diya">
-          <div class="diya-flame"></div>
-          <div class="diya-base"></div>
-        </div>
 
         <div class="diya">
+
           <div class="diya-flame"></div>
+
           <div class="diya-base"></div>
+
         </div>
 
+
         <div class="diya">
+
           <div class="diya-flame"></div>
+
           <div class="diya-base"></div>
+
         </div>
+
+
+        <div class="diya">
+
+          <div class="diya-flame"></div>
+
+          <div class="diya-base"></div>
+
+        </div>
+
 
       </div>
 
@@ -2088,8 +2325,6 @@
       <section class="blessing-box">
 
 
-        <!-- Intellect -->
-
         <div class="blessing-item">
 
           <div class="blessing-icon">
@@ -2112,8 +2347,6 @@
         </div>
 
 
-        <!-- Focus -->
-
         <div class="blessing-item">
 
           <div class="blessing-icon">
@@ -2135,8 +2368,6 @@
 
         </div>
 
-
-        <!-- Victory -->
 
         <div class="blessing-item">
 
@@ -2164,7 +2395,7 @@
 
 
       <!-- ===================================================
-           DEDICATION
+           STUDENT DEDICATION
            =================================================== -->
 
       <p class="oath-text">
@@ -2177,7 +2408,7 @@
 
 
       <!-- ===================================================
-           BRAND
+           SHIELD PRO BRAND
            =================================================== -->
 
       <div class="brand-mark">
@@ -2192,7 +2423,7 @@
 
 
       <!-- ===================================================
-           ACTION BUTTON
+           CTA
            =================================================== -->
 
       <button
@@ -2213,6 +2444,38 @@
       </button>
 
 
+      <!-- ===================================================
+           PREMIUM CREATOR SIGNATURE
+           =================================================== -->
+
+      <div
+        class="creation-credit"
+        aria-label="Crafted by Ganesh Shetty"
+      >
+
+        <span class="credit-line"></span>
+
+        <span class="credit-diamond">
+          ✦
+        </span>
+
+        <span>
+          CRAFTED BY
+        </span>
+
+        <strong>
+          GANESH SHETTY
+        </strong>
+
+        <span class="credit-diamond">
+          ✦
+        </span>
+
+        <span class="credit-line"></span>
+
+      </div>
+
+
     </div>
 
   </main>
@@ -2225,27 +2488,24 @@
   <script>
 
     /*
-      Shield Pro Native Android Bridge
+      Shield Pro Android Bridge
 
-      The existing Android bridge is intentionally preserved:
+      Your native Android app should expose:
 
           AndroidShield.dismiss()
 
-      Do not replace it if your native app already exposes
-      this JavaScript interface.
+      This remains unchanged.
     */
 
 
     const blessingButton =
-      document.getElementById("blessingButton");
+      document.getElementById(
+        "blessingButton"
+      );
 
 
     /*
-      Optional tactile feedback.
-
-      Android devices that support navigator.vibrate()
-      will receive a very small vibration when the user
-      presses the button.
+      Small tactile feedback on Android.
     */
 
     blessingButton.addEventListener(
@@ -2258,17 +2518,24 @@
             navigator.vibrate &&
             typeof navigator.vibrate === "function"
           ) {
+
             navigator.vibrate(18);
+
           }
 
-        } catch (e) {
-          /* Ignore vibration errors. */
+        } catch (error) {
+
+          /*
+            Ignore vibration errors.
+          */
+
         }
 
       }
     );
 
   </script>
+
 
 </body>
 </html>
